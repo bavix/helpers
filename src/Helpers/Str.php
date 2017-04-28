@@ -112,7 +112,7 @@ class Str
      *
      * @throws \InvalidArgumentException
      */
-    public function random($length = 32, $type = self::RAND_ALL)
+    public static function random($length = 32, $type = self::RAND_ALL)
     {
         $string = '';
         // todo: make to halper?
