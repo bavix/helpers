@@ -45,6 +45,17 @@ class Str
     }
 
     /**
+     * @param string $str
+     * @param int    $length
+     *
+     * @return array
+     */
+    public static function split($str, $length = 1)
+    {
+        return str_split($str, $length);
+    }
+
+    /**
      * Shortens text to length and keeps integrity of words
      *
      * @param  string  $str

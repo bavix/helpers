@@ -31,6 +31,18 @@ class Arr
     }
 
     /**
+     * @param array $storage
+     * @param int   $offset
+     * @param int   $length
+     *
+     * @return array
+     */
+    public static function slice(array $storage, $offset, $length = null)
+    {
+        return array_slice($storage, $offset, $length);
+    }
+
+    /**
      * @param array    $storage
      * @param callable $callback
      *
