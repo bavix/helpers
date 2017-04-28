@@ -11,7 +11,7 @@ class JSON
      *
      * @return string
      */
-    public function encode($value, $options = JSON_UNESCAPED_UNICODE | JSON_NUMERIC_CHECK)
+    public static function encode($value, $options = JSON_UNESCAPED_UNICODE | JSON_NUMERIC_CHECK)
     {
         return json_encode($value, $options);
     }
@@ -23,7 +23,7 @@ class JSON
      *
      * @return mixed
      */
-    public function decode($json, $assoc = true, $options = 0)
+    public static function decode($json, $assoc = true, $options = 0)
     {
         return json_decode($json, $assoc, 512, $options);
     }
