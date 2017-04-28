@@ -12,6 +12,17 @@ class Arr
      * @param array    $storage
      * @param callable $callback
      *
+     * @return bool
+     */
+    public static function walkRecursive(array &$storage, callable $callback)
+    {
+        return array_walk_recursive($storage, $callback);
+    }
+    
+    /**
+     * @param array    $storage
+     * @param callable $callback
+     *
      * @return array
      */
     public static function map(array $storage, $callback)
