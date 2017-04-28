@@ -6,8 +6,8 @@ class JSON
 {
 
     /**
-     * @param string    $value
-     * @param int $options
+     * @param array $value
+     * @param int   $options
      *
      * @return string
      */
