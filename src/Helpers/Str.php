@@ -38,7 +38,7 @@ class Str
 
         if (!$table)
         {
-            $table = include dirname(__DIR__, 2) . '/data/trans.php';
+            $table = require dirname(__DIR__, 2) . '/data/trans.php';
         }
 
         return $table;
