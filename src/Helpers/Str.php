@@ -3,6 +3,7 @@
 namespace Bavix\Helpers;
 
 use Bavix\Exceptions;
+use function Bavix\tables\trans;
 
 class Str
 {
@@ -34,14 +35,14 @@ class Str
      */
     protected static function table()
     {
-        static $table;
+        $file = \dirname(__DIR__, 2) . '/data/trans.php';
 
-        if (!$table)
+        if (!\opcache_is_script_cached($file))
         {
-            $table = require dirname(__DIR__, 2) . '/data/trans.php';
+            \opcache_compile_file($file);
         }
 
-        return $table;
+        return trans();
     }
 
     /**
@@ -52,7 +53,7 @@ class Str
      */
     public static function split($str, $length = 1)
     {
-        return str_split($str, $length);
+        return \str_split($str, $length);
     }
 
     /**
