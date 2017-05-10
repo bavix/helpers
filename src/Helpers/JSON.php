@@ -17,9 +17,9 @@ class JSON
     }
 
     /**
-     * @param string     $json
-     * @param bool $assoc
-     * @param int  $options
+     * @param string $json
+     * @param bool   $assoc
+     * @param int    $options
      *
      * @return mixed
      */

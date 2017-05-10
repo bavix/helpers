@@ -18,7 +18,7 @@ class Arr
     {
         return array_walk_recursive($storage, $callback);
     }
-    
+
     /**
      * @param array    $storage
      * @param callable $callback
