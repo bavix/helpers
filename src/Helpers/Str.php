@@ -161,13 +161,13 @@ class Str
     {
         switch (true)
         {
-            case $size >= ((1 << 50) * 10):
+            case ($_ = 1 << 50) && $size >= ($_ * 10):
                 $postfix = 'PB';
-                $size    /= (1 << 50);
+                $size    /= $_;
                 break;
-            case $size >= ((1 << 40) * 10):
+            case ($_ = 1 << 40) && $size >= ($_ * 10):
                 $postfix = 'TB';
-                $size    /= (1 << 40);
+                $size    /= $_;
                 break;
             case $size >= ((1 << 30) * 10):
                 $postfix = 'GB';
