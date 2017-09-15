@@ -13,7 +13,7 @@ class File
      */
     public static function put($filename, $contents)
     {
-        return file_put_contents($filename, $contents);
+        return \file_put_contents($filename, $contents);
     }
 
     /**
@@ -34,7 +34,7 @@ class File
      */
     public static function close($handle)
     {
-        return fclose($handle);
+        return \fclose($handle);
     }
 
     /**
@@ -54,7 +54,7 @@ class File
      */
     public static function remove($path)
     {
-        return unlink($path);
+        return \unlink($path);
     }
 
     /**
@@ -64,7 +64,7 @@ class File
      */
     public static function size($path)
     {
-        return filesize($path);
+        return \filesize($path);
     }
 
     /**
@@ -74,7 +74,7 @@ class File
      */
     public static function isReadable($path)
     {
-        return is_readable($path);
+        return \is_readable($path);
     }
 
     /**
@@ -84,7 +84,28 @@ class File
      */
     public static function isFile($path)
     {
-        return is_file($path);
+        return \is_file($path);
+    }
+
+    /**
+     * @param string $path
+     *
+     * @return bool
+     */
+    public static function isLink($path)
+    {
+        return \is_link($path);
+    }
+
+    /**
+     * @param string $path
+     * @param string $link
+     *
+     * @return bool
+     */
+    public static function symlink($path, $link)
+    {
+        return \symlink($path, $link);
     }
 
 }
