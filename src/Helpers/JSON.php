@@ -6,7 +6,7 @@ class JSON
 {
 
     /**
-     * @param array $value
+     * @param mixed $value
      * @param int   $options
      *
      * @return string
