@@ -13,6 +13,11 @@ class JSON
      */
     public static function encode($value, $options = JSON_UNESCAPED_UNICODE | JSON_NUMERIC_CHECK)
     {
+        if ($value instanceof \Generator)
+        {
+            $value = iterator_to_array($value);
+        }
+
         return json_encode($value, $options);
     }
 
