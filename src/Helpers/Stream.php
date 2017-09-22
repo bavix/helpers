@@ -26,7 +26,7 @@ class Stream
             throw new NotFound\Path('Stream `' . $from . '` not found');
         }
 
-        if (!realpath($to) && !File::touch($to))
+        if (!File::real($to) && !File::touch($to))
         {
             throw new Exceptions\PermissionDenied('File `' . $to . '`');
         }

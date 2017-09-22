@@ -50,6 +50,16 @@ class File
     /**
      * @param string $path
      *
+     * @return bool|string
+     */
+    public static function real($path)
+    {
+        return \realpath($path);
+    }
+
+    /**
+     * @param string $path
+     *
      * @return bool
      */
     public static function remove($path)
