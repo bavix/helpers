@@ -148,7 +148,7 @@ class Str
      */
     public static function uniqid()
     {
-        return \uniqid(\random_int(\PHP_INT_MIN, \PHP_INT_MAX), true);
+        return \uniqid(Num::randomInt(), true);
     }
 
     /**
