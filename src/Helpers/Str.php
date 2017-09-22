@@ -103,7 +103,7 @@ class Str
     public static function random($length = 32, $type = self::RAND_ALL)
     {
         $string = '';
-        // todo: make to halper?
+        // todo: make to helper?
         foreach (static::$dictionary as $pos => $item)
         {
             $key = (1 << $pos);
@@ -136,7 +136,7 @@ class Str
 
         while ($i < $length)
         {
-            $string .= $chars[\random_int(0, $max)];
+            $string .= $chars[Num::randomInt(0, $max)];
             $i++;
         }
 
