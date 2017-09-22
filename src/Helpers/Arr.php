@@ -238,6 +238,16 @@ class Arr
     }
 
     /**
+     * @param \Traversable $iterator
+     *
+     * @return array
+     */
+    public static function iterator($iterator)
+    {
+        return \iterator_to_array($iterator);
+    }
+    
+    /**
      * @param array $storage
      *
      * @return array
