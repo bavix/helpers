@@ -54,14 +54,19 @@ class Str
      */
     public static function shorten($str, $length = 100, $end = '&#8230;')
     {
-        if (strlen($str) > $length)
+        $data = $str;
+
+        if (strlen($data) > $length)
         {
-            $str = \substr(trim($str), 0, $length);
-            $str = \substr($str, 0, -\strpos(\strrev($str), ' '));
-            $str = \trim($str . $end);
+            $data = trim($data);
+            $data = \substr($data, 0, $length);
+            $rev  = \strrev($data);
+            $pos  = \strpos($rev, ' ');
+            $data = \substr($data, 0, -$pos);
+            $data .= trim($end);
         }
 
-        return $str;
+        return $data;
     }
 
     /**
