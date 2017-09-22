@@ -179,7 +179,7 @@ class Str
             $size /= 1024;
         }
 
-        return Num::format($size, 2) . ' ' . $postfix;
+        return Num::format($size, $decimals) . ' ' . $postfix;
     }
 
     /**
