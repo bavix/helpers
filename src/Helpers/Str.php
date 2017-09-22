@@ -177,7 +177,7 @@ class Str
 
         $log     = \log($size, 1024);
         $power   = \min(\floor($log), \count($units));
-        $postfix = $units[$power];
+        $postfix = $units[$power > 0 ? $power : 0];
 
         while ($power > 0 && $power--)
         {
