@@ -251,7 +251,7 @@ class Str
      */
     public static function snakeCase($string, $char = '_')
     {
-        $data = preg_replace('~([a-zа-яё])([A-ZА-ЯЁ])~u', '\\1' . $char . '\\2', $string);
+        $data = \preg_replace('~([a-zа-яё])([A-ZА-ЯЁ])~u', '\\1' . $char . '\\2', $string);
 
         return static::low($data);
     }
@@ -263,7 +263,7 @@ class Str
      */
     final protected static function _upperCase(array $input)
     {
-        return static::upp(end($input));
+        return static::upp(\end($input));
     }
 
     /**
@@ -275,7 +275,7 @@ class Str
      */
     public static function camelCase($string, $char = '_', $lcFirst = false)
     {
-        $data = preg_replace_callback(
+        $data = \preg_replace_callback(
             '~' . $char . '([a-zа-яё])~u',
             [static::class, '_upperCase'],
             $string
@@ -314,7 +314,7 @@ class Str
 
         $data = \preg_replace('~-{2,}~', '-', $data);
 
-        return trim($data, '-');
+        return \trim($data, '-');
     }
 
     /**

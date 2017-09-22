@@ -24,7 +24,7 @@ class File
      */
     public static function open($source, $mode = 'r')
     {
-        return @fopen($source, $mode . 'b');
+        return @\fopen($source, $mode . 'b');
     }
 
     /**
@@ -44,7 +44,7 @@ class File
      */
     public static function touch($path)
     {
-        return @touch($path);
+        return @\touch($path);
     }
 
     /**

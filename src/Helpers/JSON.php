@@ -15,10 +15,10 @@ class JSON
     {
         if ($value instanceof \Traversable)
         {
-            $value = iterator_to_array($value);
+            $value = \iterator_to_array($value);
         }
 
-        return json_encode($value, $options);
+        return \json_encode($value, $options);
     }
 
     /**
@@ -30,7 +30,7 @@ class JSON
      */
     public static function decode($json, $assoc = true, $options = 0)
     {
-        return json_decode($json, $assoc, 512, $options);
+        return \json_decode($json, $assoc, 512, $options);
     }
 
 }
