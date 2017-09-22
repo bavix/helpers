@@ -179,7 +179,7 @@ class Str
         $power   = \min(\floor($log), \count($units));
         $postfix = $units[$power];
 
-        while ($power--)
+        while ($power > 0 && $power--)
         {
             $size /= 1024;
         }
