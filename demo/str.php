@@ -4,6 +4,8 @@ include_once dirname(__DIR__) . '/vendor/autoload.php';
 
 use Bavix\Helpers\Str;
 
+var_dump(Str::fileSize(1231231));die;
+
 $text = 'Привет_мир';
 
 $str = Str::translit($text);

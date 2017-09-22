@@ -159,33 +159,27 @@ class Str
      */
     public static function fileSize($size, $decimals = 2)
     {
-        switch (true)
+        $units = [
+            'B', 'KB', 'MB',
+            'GB', 'TB', 'PB',
+            'EB', 'ZB', 'YB'
+        ];
+
+        if ($size < 0)
         {
-            case ($_ = 1 << 50) && $size >= ($_ * 10):
-                $postfix = 'PB';
-                $size    /= $_;
-                break;
-            case ($_ = 1 << 40) && $size >= ($_ * 10):
-                $postfix = 'TB';
-                $size    /= $_;
-                break;
-            case $size >= ((1 << 30) * 10):
-                $postfix = 'GB';
-                $size    /= (1 << 30);
-                break;
-            case $size >= ((1 << 20) * 10):
-                $postfix = 'MB';
-                $size    /= (1 << 20);
-                break;
-            case $size >= ((1 << 10) * 10):
-                $postfix = 'KB';
-                $size    /= (1 << 10);
-                break;
-            default:
-                $postfix = 'B';
+            throw new Exceptions\Invalid('Undefined size!');
         }
 
-        return \round($size, $decimals) . ' ' . $postfix;
+        $log     = \log($size, 1024);
+        $power   = \min(\floor($log), \count($units));
+        $postfix = $units[$power];
+
+        while ($power--)
+        {
+            $size /= 1024;
+        }
+
+        return Num::format($size, 2) . ' ' . $postfix;
     }
 
     /**

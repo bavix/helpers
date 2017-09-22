@@ -13,7 +13,7 @@ class JSON
      */
     public static function encode($value, $options = JSON_UNESCAPED_UNICODE | JSON_NUMERIC_CHECK)
     {
-        if ($value instanceof \Generator)
+        if ($value instanceof \Traversable)
         {
             $value = iterator_to_array($value);
         }
