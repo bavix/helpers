@@ -72,6 +72,16 @@ class File
      *
      * @return bool
      */
+    public static function exists($path)
+    {
+        return \file_exists($path);
+    }
+
+    /**
+     * @param string $path
+     *
+     * @return bool
+     */
     public static function isReadable($path)
     {
         return \is_readable($path);

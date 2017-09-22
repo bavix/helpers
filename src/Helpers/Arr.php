@@ -43,6 +43,17 @@ class Arr
     }
 
     /**
+     * @param array   $first
+     * @param array[] ...$second
+     *
+     * @return array
+     */
+    public static function merge(array $first, array ...$second)
+    {
+        return \array_merge($first, ...$second);
+    }
+
+    /**
      * @param array    $storage
      * @param callable $callback
      *
@@ -224,6 +235,16 @@ class Arr
         {
             return $default;
         }
+    }
+
+    /**
+     * @param array $storage
+     *
+     * @return array
+     */
+    public static function getKeys(array $storage)
+    {
+        return \array_keys($storage);
     }
 
     /**
