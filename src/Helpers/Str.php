@@ -76,10 +76,10 @@ class Str
      */
     public static function ucFirst($string)
     {
-        $first = static::sub($string, 0, 1);
-        $first = static::upp($first);
+        $ucFirst = static::sub($string, 0, 1);
+        $ucFirst = static::upp($ucFirst);
 
-        return $first . static::sub($string, 1);
+        return $ucFirst . static::sub($string, 1);
     }
 
     /**
@@ -89,10 +89,10 @@ class Str
      */
     public static function lcFirst($string)
     {
-        $first = static::sub($string, 0, 1);
-        $first = static::low($first);
+        $lcFirst = static::sub($string, 0, 1);
+        $lcFirst = static::low($lcFirst);
 
-        return $first . static::sub($string, 1);
+        return $lcFirst . static::sub($string, 1);
     }
 
     /**
