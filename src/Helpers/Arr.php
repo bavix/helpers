@@ -231,7 +231,7 @@ class Arr
         {
             return static::findPath($storage, static::keys($key));
         }
-        catch (\Throwable $throwable)
+        catch (\InvalidArgumentException $argumentException)
         {
             return $default;
         }
