@@ -12,13 +12,16 @@ class Stream
      * @param string $from
      * @param string $to
      *
-     * @return boolean
+     * @return bool
      *
      * @throws Exceptions\PermissionDenied
      * @throws NotFound\Path
      */
     public static function download($from, $to)
     {
+        /**
+         * @var bool|resource $fromStream
+         */
         $fromStream = File::open($from);
 
         if (!$fromStream)
