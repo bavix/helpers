@@ -252,6 +252,16 @@ class Arr
      *
      * @return array
      */
+    public static function getValues(array $storage)
+    {
+        return \array_values($storage);
+    }
+
+    /**
+     * @param array $storage
+     *
+     * @return array
+     */
     public static function getKeys(array $storage)
     {
         return \array_keys($storage);

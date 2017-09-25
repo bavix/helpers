@@ -247,6 +247,14 @@ class ArrTest extends Unit
         );
     }
 
+    public function testValues()
+    {
+        $this->assertArraySubset(
+            Arr::getValues($this->numbers),
+            \array_values($this->numbers)
+        );
+    }
+
     public function testInitOrPush()
     {
         $data = $this->clone();
