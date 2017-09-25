@@ -305,7 +305,7 @@ class Arr
     /**
      * @param array  $storage
      * @param string $key
-     * @param int    $value
+     * @param mixed  $value
      */
     public static function initOrPush(array &$storage, $key, $value)
     {
