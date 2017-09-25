@@ -103,11 +103,11 @@ class Arr
     /**
      * @param array $storage
      *
-     * @return array
+     * @return bool
      */
     public static function shuffle(array &$storage)
     {
-        return shuffle($storage);
+        return \shuffle($storage);
     }
 
     /**
