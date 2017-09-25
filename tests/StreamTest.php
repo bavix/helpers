@@ -4,16 +4,14 @@ namespace Tests;
 
 use Bavix\Helpers\Stream;
 use Bavix\Tests\Unit;
-use Bavix\Tests\Tmp;
 
 class StreamTest extends Unit
 {
 
     public function testDownload()
     {
-        $tmp = new Tmp();
-        Stream::download(__FILE__, $tmp);
-        $this->assertFileEquals((string)$tmp, __FILE__);
+        Stream::download(__FILE__, $this->tmp);
+        $this->assertFileEquals((string)$this->tmp, __FILE__);
     }
 
     /**
@@ -21,8 +19,7 @@ class StreamTest extends Unit
      */
     public function testStreamNotFoundPath()
     {
-        $tmp = new Tmp();
-        Stream::download('failed', $tmp);
+        Stream::download('failed', $this->tmp);
     }
 
     /**

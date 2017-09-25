@@ -39,12 +39,14 @@ class File
 
     /**
      * @param string $path
+     * @param int    $time
+     * @param int    $accessTime
      *
      * @return bool
      */
-    public static function touch($path)
+    public static function touch($path, $time = null, $accessTime = null)
     {
-        return @\touch($path);
+        return @\touch($path, $time, $accessTime);
     }
 
     /**
@@ -85,6 +87,16 @@ class File
     public static function exists($path)
     {
         return \file_exists($path);
+    }
+
+    /**
+     * @param string $path
+     *
+     * @return bool
+     */
+    public static function isWritable($path)
+    {
+        return \is_writable($path);
     }
 
     /**
