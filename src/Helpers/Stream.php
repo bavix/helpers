@@ -24,7 +24,7 @@ class Stream
          */
         $fromStream = File::open($from);
 
-        if (!$fromStream)
+        if (!is_resource($fromStream))
         {
             throw new NotFound\Path('Stream `' . $from . '` not found');
         }
