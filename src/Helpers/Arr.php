@@ -16,7 +16,7 @@ class Arr
      */
     public static function walkRecursive(array &$storage, callable $callback)
     {
-        return array_walk_recursive($storage, $callback);
+        return \array_walk_recursive($storage, $callback);
     }
 
     /**
@@ -27,7 +27,7 @@ class Arr
      */
     public static function map(array $storage, $callback)
     {
-        return array_map($callback, $storage);
+        return \array_map($callback, $storage);
     }
 
     /**
@@ -39,7 +39,7 @@ class Arr
      */
     public static function slice(array $storage, $offset, $length = null)
     {
-        return array_slice($storage, $offset, $length);
+        return \array_slice($storage, $offset, $length);
     }
 
     /**
@@ -61,7 +61,7 @@ class Arr
      */
     public static function filter(array $storage, $callback)
     {
-        return array_filter($storage, $callback, ARRAY_FILTER_USE_BOTH);
+        return \array_filter($storage, $callback, ARRAY_FILTER_USE_BOTH);
     }
 
     /**
@@ -73,7 +73,7 @@ class Arr
      */
     public static function fill($string, $length, $start = 0)
     {
-        return array_fill($start, $length, $string);
+        return \array_fill($start, $length, $string);
     }
 
     /**
@@ -85,7 +85,7 @@ class Arr
      */
     public static function range($begin, $end, $step = 1)
     {
-        return range($begin, $end, $step);
+        return \range($begin, $end, $step);
     }
 
     /**
@@ -97,7 +97,7 @@ class Arr
      */
     public static function in(array $storage, $needle, $strict = true)
     {
-        return in_array($needle, $storage, $strict);
+        return \in_array($needle, $storage, $strict);
     }
 
     /**
@@ -133,14 +133,14 @@ class Arr
 
     /**
      * @param array $storage
-     * @param null  $key
+     * @param string $key
      *
      * @return array|mixed
      *
      * @throws NotFound\Path
      * @throws Exceptions\Blank
      */
-    public static function getRequired(array $storage, $key = null)
+    public static function getRequired(array $storage, $key)
     {
         return static::findPath($storage, static::keys($key));
     }
@@ -156,7 +156,7 @@ class Arr
      */
     protected static function findPath(array $storage, array $keys)
     {
-        if (empty($keys))
+        if (!count($keys) || $keys[0] === '')
         {
             throw new Exceptions\Blank('Not found keys');
         }
@@ -184,7 +184,7 @@ class Arr
      */
     public static function push(array &$storage, $mixed)
     {
-        return array_push($storage, $mixed);
+        return \array_push($storage, $mixed);
     }
 
     /**
@@ -194,7 +194,7 @@ class Arr
      */
     public static function pop(array &$storage)
     {
-        return array_pop($storage);
+        return \array_pop($storage);
     }
 
     /**
@@ -204,7 +204,7 @@ class Arr
      */
     public static function shift(array &$storage)
     {
-        return array_shift($storage);
+        return \array_shift($storage);
     }
 
     /**
@@ -215,7 +215,7 @@ class Arr
      */
     public static function unShift(array &$storage, $mixed)
     {
-        return array_unshift($storage, $mixed);
+        return \array_unshift($storage, $mixed);
     }
 
     /**
@@ -264,9 +264,10 @@ class Arr
      */
     public static function keys($offset)
     {
-        $offset = preg_replace('~\[(?<s>[\'"]?)(.*?)(\k<s>)\]~u', '.$2', $offset);
+        $offset = \trim($offset);
+        $offset = \preg_replace('~\[(?<s>[\'"]?)(.*?)(\k<s>)\]~u', '.$2', $offset);
 
-        return explode('.', $offset);
+        return \explode('.', $offset);
     }
 
     /**
@@ -277,7 +278,7 @@ class Arr
      */
     public static function keyExists(array $storage, $key)
     {
-        return isset($storage[$key]) || array_key_exists($key, $storage);
+        return isset($storage[$key]) || \array_key_exists($key, $storage);
     }
 
     /**
@@ -316,7 +317,7 @@ class Arr
     protected static function &link(array &$storage, $path, &$lastKey)
     {
         $keys    = static::keys($path);
-        $lastKey = array_pop($keys);
+        $lastKey = \array_pop($keys);
         $rows    = &$storage;
 
         foreach ($keys as $key)
