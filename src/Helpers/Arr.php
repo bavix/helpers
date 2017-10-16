@@ -238,12 +238,17 @@ class Arr
     }
 
     /**
-     * @param \Traversable $iterator
+     * @param array|\Traversable $iterator
      *
      * @return array
      */
     public static function iterator($iterator)
     {
+        if (\is_array($iterator))
+        {
+            return $iterator;
+        }
+        
         return \iterator_to_array($iterator);
     }
     
