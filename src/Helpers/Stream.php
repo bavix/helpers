@@ -47,6 +47,7 @@ class Stream
      * @return Curl
      *
      * @throws Exceptions\Invalid
+     * @throws \ErrorException
      */
     public static function upload($urlOrOptions, array $data = []): Curl
     {
