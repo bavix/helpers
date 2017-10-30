@@ -49,19 +49,21 @@ class Stream
     }
 
     /**
-     * @param string|array $options
+     * @param string|array $urlOrOptions
      * @param array        $data
      *
      * @return Curl
      *
      * @throws Exceptions\Invalid
      */
-    public static function upload($options, array $data = []): Curl
+    public static function upload($urlOrOptions, array $data = []): Curl
     {
+
+        $options = $urlOrOptions;
 
         if (is_string($options))
         {
-            $options = ['url' => $options];
+            $options = ['url' => $urlOrOptions];
         }
 
         if (!isset($options['url']))
