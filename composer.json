@@ -10,7 +10,8 @@
     }
   ],
   "require": {
-    "bavix/exceptions": "^1.0"
+    "bavix/exceptions": "^1.0",
+    "curl/curl": "^1.8"
   },
   "require-dev": {
     "bavix/tests": "^1.0"

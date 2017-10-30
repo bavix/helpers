@@ -33,4 +33,12 @@ class JSON
         return \json_decode($json, $assoc, 512, $options);
     }
 
+    /**
+     * @return bool
+     */
+    public static function errorNone(): bool
+    {
+        return \json_last_error() === \JSON_ERROR_NONE;
+    }
+
 }
