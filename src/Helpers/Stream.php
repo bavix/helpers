@@ -73,6 +73,7 @@ class Stream
 
         $url    = $options['url'];
         $method = $options['method'] ?? 'post';
+        $headers = $options['headers'] ?? [];
 
         $data = Arr::map($data, function ($value) {
 
@@ -85,8 +86,19 @@ class Stream
 
         });
 
-        $curl = static::curl()
-            ->$method($url, $data);
+        $curl = static::curl();
+
+        if (!empty($headers))
+        {
+            foreach ($headers as $key => $value)
+            {
+                $headers[$key] = $key . ': ' . implode(',', (array)$value);
+            }
+
+            $curl->setOpt(CURLOPT_HTTPHEADER, Arr::getValues($headers));
+        }
+
+        $curl->$method($url, $data);
 
         $response = JSON::decode($curl->response);
 
