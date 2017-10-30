@@ -203,6 +203,46 @@ class Str
 
     /**
      * @param string $string
+     *
+     * @return string
+     */
+    public static function first($string)
+    {
+        return static::sub($string, 0, 1);
+    }
+
+    /**
+     * @param string $string
+     *
+     * @return string
+     */
+    public static function withoutFirst($string)
+    {
+        return static::sub($string, 1);
+    }
+
+    /**
+     * @param string $string
+     *
+     * @return string
+     */
+    public static function last($string)
+    {
+        return static::sub($string, -1, 1);
+    }
+
+    /**
+     * @param string $string
+     *
+     * @return string
+     */
+    public static function withoutLast($string)
+    {
+        return static::sub($string, 1, -1);
+    }
+
+    /**
+     * @param string $string
      * @param int    $start
      * @param int    $length
      *

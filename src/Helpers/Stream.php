@@ -10,14 +10,6 @@ class Stream
 {
 
     /**
-     * @return Curl
-     */
-    protected static function curl(): Curl
-    {
-        return new Curl();
-    }
-
-    /**
      * @param string $from
      * @param string $to
      *
@@ -77,16 +69,16 @@ class Stream
 
         $data = Arr::map($data, function ($value) {
 
-            if (\is_string($value) && Str::sub($value, 0, 1) === '@')
+            if (\is_string($value) && Str::first($value) === '@')
             {
-                return curl_file_create(Str::sub($value, 1));
+                return curl_file_create(Str::withoutFirst($value));
             }
 
             return $value;
 
         });
 
-        $curl = static::curl();
+        $curl = new Curl();
 
         if (!empty($headers))
         {
