@@ -16,4 +16,4 @@ Helpers - Set of assistants in development.
 * **Package**: Helpers
 * **Version**: [![Latest Stable Version](https://poser.pugx.org/bavix/helpers/v/stable)](https://packagist.org/packages/bavix/helpers)
 * **PHP Version**: 7.1+ 
-* **[Composer](https://getcomposer.org/):** `composer require bavix/flow`
+* **[Composer](https://getcomposer.org/):** `composer require bavix/helpers`
