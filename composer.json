@@ -10,11 +10,11 @@
     }
   ],
   "require": {
-    "bavix/exceptions": "^1.0",
-    "curl/curl": "^1.8"
+    "bavix/exceptions": "^1.0"
   },
   "require-dev": {
-    "bavix/tests": "^1.0"
+    "bavix/tests": "^1.0",
+    "curl/curl": "^1.8"
   },
   "autoload": {
     "psr-4": {
