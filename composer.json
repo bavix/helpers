@@ -16,6 +16,11 @@
     "bavix/tests": "^1.0",
     "curl/curl": "^1.8"
   },
+  "suggest": {
+    "ext-mbstring": "If ext-mbstring is not available you MUST install symfony/polyfill-mbstring",
+    "ext-curl": "To send requests using cURL",
+    "ext-json": "*"
+  },
   "autoload": {
     "psr-4": {
       "Bavix\\": "src/"
