@@ -5,6 +5,7 @@
 [![Build Status](https://scrutinizer-ci.com/g/bavix/helpers/badges/build.png?b=master)](https://scrutinizer-ci.com/g/bavix/helpers/build-status/master)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/bavix/helpers/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 
+[![Package Rank](https://phppackages.org/p/bavix/helpers/badge/rank.svg)](https://packagist.org/packages/bavix/helpers)
 [![Latest Stable Version](https://poser.pugx.org/bavix/helpers/v/stable)](https://packagist.org/packages/bavix/helpers)
 [![Latest Unstable Version](https://poser.pugx.org/bavix/helpers/v/unstable)](https://packagist.org/packages/bavix/helpers)
 [![License](https://poser.pugx.org/bavix/helpers/license)](https://packagist.org/packages/bavix/helpers)
