@@ -14,7 +14,7 @@
   },
   "require-dev": {
     "bavix/tests": "^1.0",
-    "curl/curl": "^1.8"
+    "curl/curl": "^1.8 || ^2.0"
   },
   "suggest": {
     "ext-mbstring": "If ext-mbstring is not available you MUST install symfony/polyfill-mbstring",
